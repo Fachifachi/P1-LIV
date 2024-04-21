@@ -29,13 +29,14 @@ function Menu({ onSelectInstrument }) {
 
 function App() {
   const [selectedInstrument, setSelectedInstrument] = useState(null);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true); // Establecer showMenu en true inicialmente
 
   useEffect(() => {
     const handleResize = () => {
       setShowMenu(window.innerWidth < 1100);
     };
 
+    handleResize(); // Llamar a handleResize al principio para establecer el estado inicial
     window.addEventListener('resize', handleResize);
 
     return () => {
