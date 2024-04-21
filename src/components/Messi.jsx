@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import mSound from '../../public/notes/MESSI/messi.mp3';
-
 function Messi() {
   const [audio, setAudio] = useState(null);
-
   const playAudio = () => {
     if (audio) {
       audio.pause();
@@ -18,8 +16,8 @@ function Messi() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      const key = event.key.toLowerCase(); // Convertir la tecla a minúscula
-      if (key === 'm') { // Comparar con 'm' en minúscula
+      const key = event.key.toLowerCase(); // convertir la tecla a minúscula
+      if (key === 'm') { // compara con 'm' en minúscula
         playAudio();
       }
     };

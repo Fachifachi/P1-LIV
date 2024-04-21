@@ -29,24 +29,20 @@ function Menu({ onSelectInstrument }) {
 
 function App() {
   const [selectedInstrument, setSelectedInstrument] = useState(null);
-  const [showMenu, setShowMenu] = useState(true); // Establecer showMenu en true inicialmente
+  const [showMenu, setShowMenu] = useState(true); // showMenu en true, sino al refrescar el menu no se ve
 
   useEffect(() => {
     const handleResize = () => {
       setShowMenu(window.innerWidth < 1100);
     };
 
-    handleResize(); // Llamar a handleResize al principio para establecer el estado inicial
+    handleResize(); 
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
 
   const handleSelectInstrument = (instrument) => {
     if (selectedInstrument === instrument) {
@@ -79,7 +75,6 @@ function App() {
           </>
         )}
       </div>
-     
     </div>
   );
 }

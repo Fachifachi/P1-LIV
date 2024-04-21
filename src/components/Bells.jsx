@@ -36,14 +36,12 @@ function Bells() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [bellNotes]);
-
-  // Determinar si la pantalla es menor de 1400px de ancho
   const isLessThan1400px = window.innerWidth < 1100;
 
   return (
     <div className=''>
       <div className='App' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        {isLessThan1400px && // Solo mostrar los botones si la pantalla es menor de 1400px
+        {isLessThan1400px && 
           bellNotes.map((item) => (
             <button
               key={item.key}

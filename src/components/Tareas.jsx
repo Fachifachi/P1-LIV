@@ -5,9 +5,8 @@ function Taskbar() {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
 
   useEffect(() => {
-    // Inicializar el objeto de audio una vez al montar el componente
+  
     setAudio(new Audio('notes/XP/Xp.mp3'));
-
     // Limpiar el recurso de audio al desmontar el componente
     return () => {
       if (audio) {
@@ -16,9 +15,8 @@ function Taskbar() {
         setAudio(null);
       }
     };
-  }, []); // La dependencia está vacía para que solo se ejecute una vez al montar el componente
-
-  // Función para obtener la hora actual en formato hh:mm AM/PM
+  }, []); 
+  // obtener la hora actual en formato hh:mm AM/PM
   function getCurrentTime() {
     const now = new Date();
     let hours = now.getHours();
@@ -31,7 +29,7 @@ function Taskbar() {
   }
 
   useEffect(() => {
-    // Actualizar la hora actual cada minuto
+    // se actualiza la hora en la barra de tareas
     const interval = setInterval(() => {
       setCurrentTime(getCurrentTime());
     }, 60000);
@@ -40,7 +38,7 @@ function Taskbar() {
     return () => {
       clearInterval(interval);
     };
-  }, []); // La dependencia está vacía para que solo se ejecute una vez al montar el componente
+  }, []); 
 
   useEffect(() => {
 
@@ -49,8 +47,6 @@ function Taskbar() {
     };
 
     window.addEventListener('timeupdate', handleSystemTimeChange);
-
-    // Limpiar la suscripción al desmontar el componente
     return () => {
       window.removeEventListener('timeupdate', handleSystemTimeChange);
     };
@@ -58,15 +54,12 @@ function Taskbar() {
 
   const playSound = () => {
     if (audio) {
-      // Detener y reiniciar el audio si ya está reproduciéndose
+      // para y vuleve a repodrucir el adio si se actuva varias veces
       audio.pause();
       audio.currentTime = 0;
-      
-      // Reproducir el sonido
       audio.play();
     }
   };
-
   return (
     <div className="bg-blue-600 h-12 flex items-center justify-between fixed bottom-0 left-0 w-full px-4">
       <div className="flex items-center space-x-4">

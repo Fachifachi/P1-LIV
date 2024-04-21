@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 function Icons() {
   const [showIcons, setShowIcons] = useState(window.innerWidth >= 1100);
 
@@ -7,14 +6,11 @@ function Icons() {
     const handleResize = () => {
       setShowIcons(window.innerWidth >= 1100);
     };
-
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
   return (
     <>
       {showIcons ? (

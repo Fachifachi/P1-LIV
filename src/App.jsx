@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import Menu from './components/Menu';
-import Piano from './components/Piano';
 import Windows from './components/Windows';
-import Messi from './components/Messi';
 import Tareas from './components/Tareas';
 
 function App() {
-  const [setSelectedInstrument] = useState(null);
 
   let content;
   

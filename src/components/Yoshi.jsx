@@ -36,8 +36,6 @@ function Yoshi() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [currentSound, yoshiNotes]);
-
-  // Determinar si la pantalla es menor de 1400px de ancho
   const isLessThan1400px = window.innerWidth < 1100;
 
   return (

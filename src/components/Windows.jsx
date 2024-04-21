@@ -20,9 +20,7 @@ function WindowsXPWindow() {
     <div className={`border border-blue-500 rounded-lg shadow-lg mx-auto mt-5 bg-white ${isLessThan1100px ? 'w-full' : 'w-2/3'} h-4/5`}>
       <header className="flex justify-between items-center bg-blue-700 text-white rounded-t-lg p-2">
         <h2 className="text-lg font-semibold">Music</h2>
-     
       </header>
-    
       <main className="p-4">
         <img src="img/smmnm77n9c501.gif" alt="Mi GIF" style={{ maxWidth: '60%', display: 'block', margin: '0 auto', marginBottom: '20px' }} /> {/* Agregamos un margen inferior de 20px */}
         <Menu />
